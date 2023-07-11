@@ -1,6 +1,6 @@
 import classes from "./App.module.less";
-import { Outlet, useLocation } from "react-router-dom";
-import React, { useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import React from "react";
 import MyBg from "../../components/bg";
 import MyHeader from "../../components/header";
 
@@ -11,7 +11,7 @@ const App: React.FC = () => {
     <div className={classes["home-container"]}>
       <MyHeader />
       <Outlet />
-      {/* <MyBg /> */}
+      <MyBg />
     </div>
   );
 };

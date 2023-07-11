@@ -96,7 +96,7 @@ const Landing: React.FC = () => {
     <div className={classes.landingWrap}>
       <div className={classes.leftWrap}>
         <h1 ref={(el) => (targetRef.current[0] = el)}>
-          你好{" "}
+          你好
           <div
             style={{ display: "inline-block" }}
             ref={(el) => (targetRef.current[3] = el)}
@@ -108,12 +108,12 @@ const Landing: React.FC = () => {
           ref={(el) => (targetRef.current[1] = el)}
           className={classes.introduce}
         >
-          我是粘问会
+          我是詹文慧
           <span></span>
         </div>
         <div ref={(el) => (targetRef.current[2] = el)}>
           <div className={classes.introduce2}>
-            ACLIMBERIN THEWORLDOFPRODUCTDESIGN
+            A CLIMBERIN THEWORLDOF PRODUCTDESIGN
           </div>
           <div className={classes.introduce3}>
             一个设计界的攀登者<br></br>
@@ -121,7 +121,7 @@ const Landing: React.FC = () => {
           </div>
         </div>
 
-        <Row gutter={10}>
+        <Row gutter={10} className={classes.rowWrap}>
           <Col className="gutter-row" span={4}>
             {/* <Tooltip title="prompt text"> */}
             <div className={classes.iconWrap}>
@@ -140,9 +140,15 @@ const Landing: React.FC = () => {
             </div>
           </Col>
           <Col className="gutter-row" span={4}>
-            <div className={classes.iconWrap}>
-              <WechatOutlined />
-            </div>
+            <Tooltip
+              overlayClassName={`${classes.tipWrap} ${classes.wechatCodeWrap}`}
+              title={<div className={classes.wechatCode}></div>}
+              color={"rgb(217,141,143)"}
+            >
+              <div className={classes.iconWrap}>
+                <WechatOutlined />
+              </div>
+            </Tooltip>
           </Col>
 
           <Col className="gutter-row" span={4}>

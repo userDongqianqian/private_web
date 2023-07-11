@@ -7,6 +7,7 @@
 .my-mixin(@mobile,@scale) {
   @media @mobile {
     .headerWrap {
+      // min-width: 1300px;
       box-sizing: border-box;
       width: 100%;
       display: flex;
@@ -19,7 +20,7 @@
       align-items: center;
       background: transparent;
       height: calc(80px * @scale);
-      padding: 0 calc(40px * @scale);
+      padding: 0 calc(90px * @scale);
       .headerImg {
         width: calc(50px * @scale);
         height: calc(50px * @scale);
@@ -44,3 +45,16 @@
 .my-mixin(~"(min-width: 1300px) and (max-width: 1500px)",@scale1500);
 .my-mixin(~"(min-width: 1501px) and (max-width: 1700px)",@scale1700);
 .my-mixin(~"(min-width: 1501px)",@scale1920);
+@media (min-width: 1921px) and (max-width: 2559px) {
+  .headerWrap {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .headerWrap {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}

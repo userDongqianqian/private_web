@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const MyBg: React.FC = () => {
   const [backgroundPosition, setBackgroundPosition] = useState({ x: 0, y: 0 });
   useEffect(() => {
-    const handleMouseMove = (event) => {
+    const handleMouseMove = (event:any) => {
       const { clientX, clientY } = event;
       setBackgroundPosition({ x: clientX, y: clientY });
     };

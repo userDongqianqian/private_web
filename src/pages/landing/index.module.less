@@ -5,18 +5,18 @@
 .my-mixin(@mobile,@scale) {
   @media @mobile {
     .landingWrap {
-      z-index: 11;
+      z-index: -5;
       box-sizing: border-box;
       display: flex;
-      padding: calc(16% * @scale) calc(90px * @scale) 0 calc(90px * @scale);
+      padding: calc(17% * @scale) calc(90px * @scale) 0 calc(90px * @scale);
       height: 100vh;
-      min-height: calc(100vh * 0.5625);
+      min-height: 56.25vw;
       overflow: hidden;
       width: 100%;
-      background: linear-gradient(180deg, #6924a6, #701cba, #5d16bb, #5533e1);
-      -webkit-mask-image: radial-gradient(circle, transparent 0px, black 0);
-      mask-image: radial-gradient(circle, transparent 0px, black 0);
+      min-width: 1300px;
+      background: url(../../assets/bg.png) center / cover no-repeat;
       .leftWrap {
+        z-index: 9;
         flex: 1;
         color: #fff;
         h1 {
@@ -67,6 +67,7 @@
         }
       }
       .rightWrap {
+        z-index: 9;
         flex: 1;
         .ren {
           margin: 0 auto;
@@ -87,8 +88,26 @@
         }
       }
     }
+    .rowWrap {
+      width: 90%;
+    }
     .tipWrap {
       font-size: calc(24px * @scale);
+    }
+    .wechatCodeWrap {
+      :global {
+        .ant-tooltip-inner {
+          padding: 0px;
+        }
+      }
+    }
+    .wechatCode {
+      border-radius: 6px;
+      overflow: hidden;
+      width: 230px;
+      height: 300px;
+      background: url(../../assets/wechatCode.png) no-repeat;
+      background-size: 100% 100%;
     }
     @font-face {
       font-family: "TekoMedium";
@@ -100,3 +119,16 @@
 .my-mixin(~"(min-width: 1300px) and (max-width: 1500px)",@scale1500);
 .my-mixin(~"(min-width: 1501px) and (max-width: 1700px)",@scale1700);
 .my-mixin(~"(min-width: 1501px)",@scale1920);
+@media (min-width: 1921px) and (max-width: 2559px) {
+  .landingWrap {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .landingWrap {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}
