@@ -1,0 +1,33 @@
+@scaleSmall: 0.677;
+@scale1500: 0.781;
+@scale1700: 0.88;
+@scale1920: 1;
+.my-mixin(@mobile,@scale) {
+  @media @mobile {
+    .bgWrap {
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.18);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+    .bg {
+      height: calc(400px * @scale);
+      width: calc(400px * @scale);
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      position: absolute;
+      filter: blur(122px);
+      background: #f3c03d;
+      z-index: 0;
+    }
+  }
+}
+.my-mixin(~"(max-width: 1299px)",@scaleSmall);
+.my-mixin(~"(min-width: 1300px) and (max-width: 1500px)",@scale1500);
+.my-mixin(~"(min-width: 1501px) and (max-width: 1700px)",@scale1700);
+.my-mixin(~"(min-width: 1501px)",@scale1920);

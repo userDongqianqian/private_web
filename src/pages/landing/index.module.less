@@ -1,0 +1,102 @@
+@scaleSmall: 0.677;
+@scale1500: 0.781;
+@scale1700: 0.88;
+@scale1920: 1;
+.my-mixin(@mobile,@scale) {
+  @media @mobile {
+    .landingWrap {
+      z-index: 11;
+      box-sizing: border-box;
+      display: flex;
+      padding: calc(16% * @scale) calc(90px * @scale) 0 calc(90px * @scale);
+      height: 100vh;
+      min-height: calc(100vh * 0.5625);
+      overflow: hidden;
+      width: 100%;
+      background: linear-gradient(180deg, #6924a6, #701cba, #5d16bb, #5533e1);
+      -webkit-mask-image: radial-gradient(circle, transparent 0px, black 0);
+      mask-image: radial-gradient(circle, transparent 0px, black 0);
+      .leftWrap {
+        flex: 1;
+        color: #fff;
+        h1 {
+          font-weight: normal;
+          font-size: calc(60px * @scale);
+          margin: 0;
+        }
+        .introduce {
+          display: block;
+          position: relative;
+          font-size: calc(130px * @scale);
+          line-height: normal;
+          margin: -10px 0 0 0;
+          span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: calc(250px * @scale);
+            height: calc(5px * @scale);
+            background-color: #5500ff;
+          }
+        }
+        .introduce2 {
+          color: rgba(177, 176, 176, 0.573);
+          line-height: calc(100px * @scale);
+          margin-top: calc(20px * @scale);
+          font-family: "TekoMedium";
+          font-size: calc(47px * @scale);
+        }
+        .introduce3 {
+          color: rgba(177, 176, 176, 0.573);
+          font-size: calc(29px * @scale);
+          margin-bottom: calc(90px * @scale);
+        }
+        .iconWrap {
+          cursor: pointer;
+          width: calc(80px * @scale);
+          height: calc(80px * @scale);
+          border-radius: 50%;
+          transition: all 0.25s linear;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: calc(40px * @scale);
+          &:hover {
+            background-color: #6509e7;
+          }
+        }
+      }
+      .rightWrap {
+        flex: 1;
+        .ren {
+          margin: 0 auto;
+          width: calc(600px * @scale);
+          height: calc(600px * @scale);
+          border-radius: 50%;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .renImg {
+            width: calc(800px * @scale) !important;
+            height: calc(800px * @scale);
+            background: url(../../assets/ren.png) no-repeat;
+            background-size: 100%;
+            background-position: 40% 50%;
+          }
+        }
+      }
+    }
+    .tipWrap {
+      font-size: calc(24px * @scale);
+    }
+    @font-face {
+      font-family: "TekoMedium";
+      src: url("../fonts/Teko-Medium.ttf") format("truetype");
+    }
+  }
+}
+.my-mixin(~"(max-width: 1299px)",@scaleSmall);
+.my-mixin(~"(min-width: 1300px) and (max-width: 1500px)",@scale1500);
+.my-mixin(~"(min-width: 1501px) and (max-width: 1700px)",@scale1700);
+.my-mixin(~"(min-width: 1501px)",@scale1920);
