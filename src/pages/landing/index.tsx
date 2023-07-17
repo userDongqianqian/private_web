@@ -117,8 +117,7 @@ const Landing: React.FC = () => {
           </div>
           <div className={classes.introduce3}>
             一个设计界的攀登者<br></br>
-            1231231
-            {/* 拥有一颗毫无边界的好奇心和一股心无旁骛的探索力 */}
+            拥有一颗毫无边界的好奇心和一股心无旁骛的探索力
           </div>
         </div>
 
