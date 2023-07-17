@@ -74,6 +74,14 @@ const Landing: React.FC = () => {
         easing: "easeOutSine",
       },
       {
+        targets: ".ant-row .ant-col",
+        opacity: [0, 1],
+        translateY: ["-20px", "0px"],
+        duration: 1000,
+        easing: "easeOutSine",
+        delay: anime.stagger(200, { start: 500 }),
+      },
+      {
         targets: elements[3],
         rotate: ["15deg", "-15deg", "15deg"],
         duration: 1000,
@@ -84,7 +92,11 @@ const Landing: React.FC = () => {
       },
     ];
     animations.forEach((animation, index) => {
-      anime({ ...animation, delay: (index + 1) * 400 });
+      if (!animation.delay) {
+        anime({ ...animation, delay: (index + 1) * 400 });
+      } else {
+        anime(animation);
+      }
     });
     /////////
     const parallaxInstance = new Parallax(parallaxContainerRef.current);
@@ -121,24 +133,29 @@ const Landing: React.FC = () => {
           </div>
         </div>
 
-        <Row gutter={10} className={classes.rowWrap}>
+        <Row
+          gutter={10}
+          className={classes.rowWrap}
+          ref={(el) => (targetRef.current[4] = el)}
+        >
           <Col className="gutter-row" span={4}>
-            {/* <Tooltip title="prompt text"> */}
             <div className={classes.iconWrap}>
               <DingdingOutlined />
             </div>
-            {/* </Tooltip> */}
           </Col>
+
           <Col className="gutter-row" span={4}>
             <div className={classes.iconWrap}>
               <TwitterOutlined />
             </div>
           </Col>
+
           <Col className="gutter-row" span={4}>
             <div className={classes.iconWrap}>
               <QqOutlined />
             </div>
           </Col>
+
           <Col className="gutter-row" span={4}>
             <Tooltip
               overlayClassName={`${classes.tipWrap} ${classes.wechatCodeWrap}`}
@@ -162,6 +179,7 @@ const Landing: React.FC = () => {
               </div>
             </Tooltip>
           </Col>
+
           <Col className="gutter-row" span={4}>
             <Tooltip
               overlayClassName={classes.tipWrap}
