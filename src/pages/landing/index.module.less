@@ -70,6 +70,7 @@
         z-index: 9;
         flex: 1;
         .ren {
+          position: relative;
           margin: 0 auto;
           width: calc(600px * @scale);
           height: calc(600px * @scale);
@@ -84,7 +85,24 @@
             background: url(../../assets/ren.png) no-repeat;
             background-size: 100%;
             background-position: 40% 50%;
+            z-index: 9;
           }
+          // .cover {
+          //   cursor: pointer;
+          //   user-select: none;
+          //   position: absolute;
+          //   left: 0;
+          //   top: 0;
+          //   right: 0;
+          //   bottom: 0;
+          //   transition: all linear 0.5;
+          //   background: #6509e7;
+          //   width: calc(600px * @scale);
+          //   height: calc(600px * @scale);
+          // }
+          // .cover:hover {
+          //   top: -100%;
+          // }
         }
       }
     }

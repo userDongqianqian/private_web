@@ -48,8 +48,8 @@ const PhoneIcon = () => (
   </svg>
 );
 const Landing: React.FC = () => {
-  const targetRef = useRef([]); //动画
-  const parallaxContainerRef = useRef(null); //视察实例
+  const targetRef = useRef<any>([]); //动画
+  const parallaxContainerRef = useRef<any>(null); //视察实例
   useEffect(() => {
     const elements = targetRef.current;
     const animations = [
@@ -196,10 +196,10 @@ const Landing: React.FC = () => {
       <div className={classes.rightWrap}>
         <div className={classes.ren} ref={parallaxContainerRef}>
           <div className={classes.renImg} data-depth="0.2"></div>
+          {/* <div className={classes.cover}></div> */}
         </div>
       </div>
     </div>
-    
   );
 };
 export default Landing;
