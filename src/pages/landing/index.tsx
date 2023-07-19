@@ -12,12 +12,12 @@ import Parallax from "parallax-js";
 const MailIcon = () => (
   <svg
     t="1688974060469"
-    class="icon"
+    className="icon"
     viewBox="0 0 1024 1024"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     p-id="2349"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
     width="1em"
     height="1em"
   >
@@ -31,12 +31,12 @@ const MailIcon = () => (
 const PhoneIcon = () => (
   <svg
     t="1688974133750"
-    class="icon"
+    className="icon"
     viewBox="0 0 1024 1024"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     p-id="4422"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
     width="1em"
     height="1em"
   >

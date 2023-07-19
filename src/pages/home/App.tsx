@@ -10,8 +10,12 @@ const App: React.FC = () => {
   //   const location = useLocation();
   //   const selectKey = location.pathname.substring(1);
   useEffect(() => {
-    window.onload = () => {
+    const handleLoad = () => {
       setIsLoading(false);
+    };
+    window.addEventListener("load", handleLoad);
+    return () => {
+      window.removeEventListener("load", handleLoad);
     };
   }, []);
 
