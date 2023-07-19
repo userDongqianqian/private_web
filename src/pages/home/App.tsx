@@ -11,7 +11,9 @@ const App: React.FC = () => {
   //   const selectKey = location.pathname.substring(1);
   useEffect(() => {
     window.onload = () => {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1500);
     };
   }, []);
 
