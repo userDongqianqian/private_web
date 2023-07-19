@@ -10,9 +10,9 @@ const App: React.FC = () => {
   //   const location = useLocation();
   //   const selectKey = location.pathname.substring(1);
   useEffect(() => {
-    setTimeout(() => {
+    window.onload = () => {
       setIsLoading(false);
-    }, 5000);
+    };
   }, []);
 
   const MainContent = () => {
