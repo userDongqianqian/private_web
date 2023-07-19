@@ -1,9 +1,53 @@
-.loading-container {
-  opacity: 0; /* 默认隐藏 */
-  transition: opacity 0.5s ease-in-out; /* 过渡效果，持续时间为0.5秒 */
-}
+/* Loading.css */
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .loadingCubeContainer {
+    display: flex;
+    align-items: center;
+    .loadingCube {
+      border-radius: 10px;
+      width: 30px;
+      height: 100px;
+      margin: 0 10px;
+      background-color: #ccc;
+      animation: cubeAnimation 1.8s infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
+    }
 
-.main-content {
-  opacity: 0; /* 默认隐藏 */
-  transition: opacity 0.5s ease-in-out; /* 过渡效果，持续时间为0.5秒 */
+    @keyframes cubeAnimation {
+      0% {
+        height: 100px;
+      }
+      50% {
+        height: 30px;
+      }
+      100% {
+        height: 100px;
+      }
+    }
+
+    .loadingCube1 {
+      animation-delay: 0s;
+    }
+
+    .loadingCube2 {
+      animation-delay: 0.2s;
+    }
+
+    .loadingCube3 {
+      animation-delay: 0.4s;
+    }
+
+    .loadingCube4 {
+      animation-delay: 0.6s;
+    }
+
+    .loadingCube5 {
+      animation-delay: 0.8s;
+    }
+  }
 }
