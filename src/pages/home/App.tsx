@@ -22,7 +22,7 @@ const App: React.FC = () => {
       <div className={classes["home-container"]}>
         <MyHeader />
         <Outlet />
-        <MyBg />
+        {/* <MyBg /> */}
       </div>
     );
   };

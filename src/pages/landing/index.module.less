@@ -4,13 +4,16 @@
 @scale1920: 1;
 .my-mixin(@mobile,@scale) {
   @media @mobile {
+    .swiperWrap {
+      height: 100vh;
+    }
     .landingWrap {
-      z-index: -5;
+      position: relative;
       box-sizing: border-box;
       display: flex;
-      padding: calc(17% * @scale) calc(90px * @scale) 0 calc(90px * @scale);
+      align-items: center;
+      padding: 0 calc(90px * @scale);
       height: 100vh;
-      min-height: 56.25vw;
       overflow: hidden;
       width: 100%;
       min-width: 1300px;
@@ -104,6 +107,15 @@
           //   top: -100%;
           // }
         }
+      }
+      .next {
+        z-index: 999;
+        cursor: pointer;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 16px;
       }
     }
     .rowWrap {

@@ -9,6 +9,7 @@ const MyHeader: React.FC = () => {
     link.download = "简历.pdf"; // 替换为实际的文件名
     link.click();
   };
+  
   return (
     <div className={classes.headerWrap}>
       <div className={classes.headerImg}></div>
