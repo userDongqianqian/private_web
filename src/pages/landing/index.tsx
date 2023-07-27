@@ -125,6 +125,7 @@ const Landing: React.FC = () => {
       parallaxInstance.destroy(); // 在组件卸载时销毁 Parallax 实例
     };
   }, []);
+
   return (
     <div className="swiper-container">
       <div className="swiper-wrapper" style={{ color: "#fff" }}>
@@ -225,6 +226,7 @@ const Landing: React.FC = () => {
             </div>
             <div className={classes.next} onClick={goToNextSlide}>
               向下继续
+              <a href="/pageA.html">213123123123</a>
             </div>
           </div>
         </div>
