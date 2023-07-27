@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page A</title>
+</head>
+
+<body>
+    <h1>This is Page A</h1>
+    <p id="tokenValue"></p>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <script>
+        function getQueryString(e) {
+            var t = new RegExp("(^|&)" + e + "=([^&]*)(&|$)", "i"),
+                i = window.location.search.substr(1).match(t);
+            return null != i ? decodeURIComponent(i[2]) : null
+        }
+        //调用函数
+        let token = getQueryString("token");
+        document.getElementById("tokenValue").textContent = "拿到的参数：Token: " + token;
+    </script>
+</body>
+
+</html>
