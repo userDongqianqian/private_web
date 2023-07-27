@@ -1,7 +1,6 @@
 import App from "../pages/home/App";
 
 import Landing from "../pages/landing";
-
 import Page404 from "../pages/404";
 export default [
   {
@@ -15,7 +14,6 @@ export default [
       },
     ],
   },
-
   {
     path: "/404",
     auth: true,

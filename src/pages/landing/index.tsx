@@ -116,6 +116,7 @@ const Landing: React.FC = () => {
         sensitivity: 0.4,
         forceToAxis: true,
       },
+      autoHeight: true,
       direction: "vertical",
       freeMode: true,
       noSwiping: true,
@@ -125,7 +126,7 @@ const Landing: React.FC = () => {
     };
   }, []);
   return (
-    <div className="swiper-container" style={{ height: "100vh" }}>
+    <div className="swiper-container">
       <div className="swiper-wrapper" style={{ color: "#fff" }}>
         <div className="swiper-slide swiper-no-swiping">
           <div className={classes.landingWrap}>

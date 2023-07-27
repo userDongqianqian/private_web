@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page A</title>
+</head>
+
+<body>
+    <h1>This is Page A</h1>
+    <p id="tokenValue"></p>
+    <button style="width: 100px;" onclick="goToPageB()">点击扫码</button>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+    <script>
+        function goToPageB() {
+            wx.miniProgram.getEnv(function (res) {
+                if (res.miniprogram) {
+                    //小程序环境 ,在此进行相关逻辑处理
+                    wx.miniProgram.navigateTo({
+                        url: '/pages/scanCode/index'
+                    })
+                } else {
+                    //非小程序环境下逻辑
+                    console.log('不在小程序中')
+                }
+            })
+        }
+        function getQueryString(e) {
+            var t = new RegExp("(^|&)" + e + "=([^&]*)(&|$)", "i"),
+                i = window.location.search.substr(1).match(t);
+            return null != i ? decodeURIComponent(i[2]) : null
+        }
+        //调用函数
+
+        let token = getQueryString("token");
+        document.getElementById("tokenValue").textContent = "拿到的参数：Token: " + token;
+
+        // window.onload = function () {
+        //     wx.config({
+        //         // Add your own configurations here
+        //         appId: 'wx8f33de982b456290',
+        //         timestamp: 0, // 必填，填任意数字即可
+        //         nonceStr: 'nonceStr', // 必填，填任意非空字符串即可
+        //         signature: 'signature', // 必填，填任意非空字符串即可
+        //         jsApiList: ['scanCode']
+        //     });
+
+        //     wx.ready(function () {
+        //         console.log('231313131')
+        //         // Execute scanQRCode function when WeChat SDK is ready
+        //     });
+
+        //     wx.error(function (error) {
+        //         console.error('SDK configuration error:', error);
+        //     });
+        // };
+    </script>
+</body>
+
+</html>
